@@ -1,0 +1,16 @@
+<!-- <form (ngSubmit)="onSubmit()"> -->
+<label>Altura(m): </label>
+<input type="number" step="any" id="altura" [(ngModel)]="altura" />
+<br />
+<br />
+<label>Massa(kg): </label>
+<input type="number" step="any" id="massa" [(ngModel)]="massa" />
+
+<!-- <button type="submit">Calcular</button> -->
+<button (click)="onSubmit()">Calcular</button>
+<!-- </form> -->
+<br />
+<div *ngIf="exibeP">
+    <p id="resultado">Resultado: {{resultado}}</p>
+    <p id="classificacao">classificacao: {{classificacao}}</p>
+</div>

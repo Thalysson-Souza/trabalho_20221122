@@ -1,0 +1,17 @@
+<label>Tarefa:</label>
+<input type="text" name="tarefa" id="tarefa" [(ngModel)]="tarefa" />
+<button (click)="inserir()">Criar</button>
+<br />
+<style>
+    .teste {
+        color: 'red',
+    }
+
+</style>
+<ul>
+    <li *ngFor="let item of itens; let i =index">
+        <p [ngStyle]="{'color':'red'}" id={i} (click)="changeItem(i)">{{item}}
+            <button (click)="remover(i)">Excluir</button>
+        </p>
+    </li>
+</ul>
