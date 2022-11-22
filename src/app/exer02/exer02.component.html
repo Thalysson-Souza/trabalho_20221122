@@ -1,16 +1,14 @@
-<label>Tarefa:</label>
-<input type="text" name="tarefa" id="tarefa" [(ngModel)]="tarefa" />
-<button (click)="inserir()">Criar</button>
-<br />
-<style>
-    .teste {
-        color: 'red',
-    }
+<label for="tarefaInput">Tarefa:</label>
+<input type="text" name="tarefaInput" #newItem placeholder="Inseria a descrição da tarefa"
+    (keyup.enter)="inserir(newItem.value); newItem.value = ''" id="tarefaInput" />
+<button (click)="inserir(newItem.value); newItem.value = ''">Criar</button>
 
-</style>
+<br />
+
 <ul>
     <li *ngFor="let item of itens; let i =index">
-        <p [ngStyle]="{'color':'red'}" id={i} (click)="changeItem(i)">{{item}}
+        <p [ngClass]="item.done == true ? 'done' : 'notDone'" (click)="change(i)">
+            {{item.description}}
             <button (click)="remover(i)">Excluir</button>
         </p>
     </li>
